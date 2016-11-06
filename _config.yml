@@ -23,4 +23,5 @@ github:
   repo:           https://github.com/jindraivanek/jindraivanek.github.io
 
 collections:
-  - snippets
+  snippets:
+    output: true
