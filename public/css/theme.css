@@ -16,6 +16,23 @@ strong {
   color: #f5f5f5;
 }
 
+.post-title a {
+  color: #ffd700;
+}
+
+.post-date {
+  color: #9a9a9a;
+}
+
+.pagination-item {
+  border: 1px solid #eee;
+}
+
+a.pagination-item:hover {
+  background-color: #000;
+}
+
+
 .sidebar {
   background-color: #8f5536;
 }
