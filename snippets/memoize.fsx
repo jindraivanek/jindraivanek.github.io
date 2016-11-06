@@ -1,9 +1,3 @@
-(*** raw ***)
----
-layout: page
-title: Memoize
----
-
 let memoizeBy (f: 'a -> 'b) (g: 'a -> 'c) =
     let cache = System.Collections.Concurrent.ConcurrentDictionary<_, _>(HashIdentity.Structural)
     fun x ->
