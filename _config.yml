@@ -7,7 +7,7 @@ permalink:        pretty
 # relative_permalinks: true
 
 # Setup
-title:            'Jindra Ivánek's Blog'
+title:            'Jindra Ivánek Blog'
 tagline:          'Blogging FSharp'
 description:      ''
 url:              https://jindraivanek.github.io
