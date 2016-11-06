@@ -1,6 +1,3 @@
 NUGET
-  remote: https://nuget.org/api/v2
-  specs:
-    FAKE (3.8.5)
-    FSharpx.TypeProviders.Xaml (1.8.41)
-    RavenDB.Server (2.5.2935)
+  remote: https://www.nuget.org/api/v2
+    FSharp.Formatting.CommandTool (2.14.4)
