@@ -4,20 +4,20 @@ highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
+# relative_permalinks: true
 
 # Setup
-title:            'FsBlog'
+title:            'Jindra Ivánek's Blog'
 tagline:          'Blogging FSharp'
 description:      ''
-url:              https://github.com/colinbull/FsBlog
+url:              https://jindraivanek.github.io
 baseurl:          /
 
 author:
-  name:           'FsBlog'
+  name:           'Jindřich Ivánek'
   url:            
 
 paginate:         5
 
 github:
-  repo:           https://github.com/colinbull/FsBlog
+  repo:           https://github.com/jindraivanek/jindraivanek.github.io
