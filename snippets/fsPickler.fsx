@@ -1,7 +1,7 @@
 (*** raw ***)
 ---
 layout: page
-title: Memoize
+title: FsPickler: function serialization
 ---
 (** FsPickler can be used to "serialize" functions: *)
 open MBrace.FsPickler
