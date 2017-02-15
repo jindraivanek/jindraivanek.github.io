@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+      Jindra Ivánek's blog &middot; Functional programming by a lazy squirrel on the tree
+  </title>
+  
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/poole.css">
+  <link rel="stylesheet" href="css/syntax.css">
+  <link rel="stylesheet" href="css/hyde.css">
+  <link rel="stylesheet" href="css/tips.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    
+  <!-- JS -->
+  <script type="text/javascript" src="js/tips.js"></script>  
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h2>
+        <a href=".">
+          Jindra Ivánek's blog
+        </a>
+      </h2>
+      <p class="lead">
+    </div>
+
+      <!--<nav class="sidebar-nav">
+          <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+
+          {% comment %}
+          The code below dynamically generates a sidebar nav of pages with
+          `layout: page` in the front-matter. See readme for usage.
+          {% endcomment %}
+
+          {% assign pages_list = site.pages %}
+          {% for node in pages_list %}
+          {% if node.title != null %}
+          {% if node.layout == "page" %}
+          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+          <a class="sidebar-nav-item" href="{{ site.url }}/atom.xml">RSS</a>
+      </nav>-->
+
+      <nav class="sidebar-nav">
+          <a class="sidebar-nav-item" href="index.html">Home</a>
+          <a class="sidebar-nav-item" href="Blog.html">Blog</a><a class="sidebar-nav-item" href="QuickPosts.html">QuickPosts</a><a class="sidebar-nav-item" href="Snippets.html">Snippets</a>
+      </nav>
+
+      <div>
+          <a href="https://github.com/jindraivanek">
+              <img src="GitHub-Mark-Light-32px.png" style="display: inline">
+          </a>
+          <a href="https://twitter.com/jindraivanek">
+              <img src="Twitter_logo_white_32.png" style="display: inline">
+          </a>
+      </div>
+    <p>&copy; 2017. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="posts">
+        <div class="post">
+          <h1>FsPickler</h1>
+<p>FsPickler can be used to "serialize" functions:</p>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">open</span> <span class="i">MBrace</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">FsPickler</span>
+<span class="k">open</span> <span class="i">MBrace</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 2)" onmouseover="showTip(event, 'fs1', 2)" class="i">FsPickler</span><span class="o">.</span><span class="i">Json</span>
+
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 3)" onmouseover="showTip(event, 'fs2', 3)" class="i">s</span> <span class="o">=</span> <span class="i">FsPickler</span><span class="o">.</span><span class="i">CreateJsonSerializer</span>()
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs3', 4)" onmouseover="showTip(event, 'fs3', 4)" class="i">pickle</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs2', 5)" onmouseover="showTip(event, 'fs2', 5)" class="i">s</span><span class="o">.</span><span class="i">PickleToString</span> (<span class="k">fun</span> <span class="i">x</span> <span class="k">-&gt;</span> <span class="i">x</span> <span class="o">+</span> <span class="n">1</span>)
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 6)" onmouseover="showTip(event, 'fs4', 6)" class="f">f</span><span class="o">:</span><span onmouseout="hideTip(event, 'fs5', 7)" onmouseover="showTip(event, 'fs5', 7)" class="t">int</span><span class="k">-&gt;</span><span onmouseout="hideTip(event, 'fs5', 8)" onmouseover="showTip(event, 'fs5', 8)" class="t">int</span> <span class="o">=</span> <span class="i">bs</span><span class="o">.</span><span class="i">UnPickleOfString</span> <span onmouseout="hideTip(event, 'fs3', 9)" onmouseover="showTip(event, 'fs3', 9)" class="i">pickle</span>
+<span onmouseout="hideTip(event, 'fs4', 10)" onmouseover="showTip(event, 'fs4', 10)" class="f">f</span>(<span class="n">1</span>)
+</code></pre></td>
+</tr>
+</table>
+<div class="tip" id="fs1">module FsPickler</div>
+<div class="tip" id="fs2">val s : obj<br><br>Full name: FsPickler.s</div>
+<div class="tip" id="fs3">val pickle : obj<br><br>Full name: FsPickler.pickle</div>
+<div class="tip" id="fs4">val f : (int -&gt; int)<br><br>Full name: FsPickler.f</div>
+<div class="tip" id="fs5">Multiple items<br>val int : value:&#39;T -&gt; int (requires member op_Explicit)<br><br>Full name: Microsoft.FSharp.Core.Operators.int<br><br>--------------------<br>type int = int32<br><br>Full name: Microsoft.FSharp.Core.int<br><br>--------------------<br>type int&lt;&#39;Measure&gt; = int<br><br>Full name: Microsoft.FSharp.Core.int&lt;_&gt;</div>
+
+
+        </div><div class="post">
+          <h1>Memoize</h1>
+<table class="pre"><tr><td class="lines"><pre class="fssnip"><span class="l">1: </span>
+<span class="l">2: </span>
+<span class="l">3: </span>
+<span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
+<span class="l">8: </span>
+<span class="l">9: </span>
+</pre></td>
+<td class="snippet"><pre class="fssnip highlighted"><code lang="fsharp"><span class="k">let</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="f">memoizeBy</span> (<span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="f">f</span><span class="o">:</span> <span class="o">&#39;</span><span class="i">a</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">b</span>) (<span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="f">g</span><span class="o">:</span> <span class="o">&#39;</span><span class="i">a</span> <span class="k">-&gt;</span> <span class="o">&#39;</span><span class="i">c</span>) <span class="o">=</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="i">cache</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="i">System</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs6', 6)" onmouseover="showTip(event, 'fs6', 6)" class="i">Collections</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs7', 7)" onmouseover="showTip(event, 'fs7', 7)" class="i">Concurrent</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs8', 8)" onmouseover="showTip(event, 'fs8', 8)" class="t">ConcurrentDictionary</span><span class="o">&lt;</span>_, _<span class="o">&gt;</span>(<span onmouseout="hideTip(event, 'fs9', 9)" onmouseover="showTip(event, 'fs9', 9)" class="t">HashIdentity</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs10', 10)" onmouseover="showTip(event, 'fs10', 10)" class="i">Structural</span>)
+    <span class="k">fun</span> <span onmouseout="hideTip(event, 'fs11', 11)" onmouseover="showTip(event, 'fs11', 11)" class="i">x</span> <span class="k">-&gt;</span>
+        <span onmouseout="hideTip(event, 'fs4', 12)" onmouseover="showTip(event, 'fs4', 12)" class="i">cache</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs12', 13)" onmouseover="showTip(event, 'fs12', 13)" class="f">GetOrAdd</span>(<span onmouseout="hideTip(event, 'fs13', 14)" onmouseover="showTip(event, 'fs13', 14)" class="p">Some</span> (<span onmouseout="hideTip(event, 'fs3', 15)" onmouseover="showTip(event, 'fs3', 15)" class="f">g</span> <span onmouseout="hideTip(event, 'fs11', 16)" onmouseover="showTip(event, 'fs11', 16)" class="i">x</span>), <span class="k">lazy</span> (<span onmouseout="hideTip(event, 'fs2', 17)" onmouseover="showTip(event, 'fs2', 17)" class="f">f</span> <span onmouseout="hideTip(event, 'fs11', 18)" onmouseover="showTip(event, 'fs11', 18)" class="i">x</span>))<span class="o">.</span><span class="f">Force</span>()
+        
+<span class="k">let</span> <span class="k">inline</span> <span onmouseout="hideTip(event, 'fs14', 19)" onmouseover="showTip(event, 'fs14', 19)" class="f">memoize</span> <span onmouseout="hideTip(event, 'fs15', 20)" onmouseover="showTip(event, 'fs15', 20)" class="f">f</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs1', 21)" onmouseover="showTip(event, 'fs1', 21)" class="f">memoizeBy</span> <span onmouseout="hideTip(event, 'fs15', 22)" onmouseover="showTip(event, 'fs15', 22)" class="f">f</span> <span onmouseout="hideTip(event, 'fs16', 23)" onmouseover="showTip(event, 'fs16', 23)" class="f">id</span>
+<span class="k">let</span> <span class="k">inline</span> <span onmouseout="hideTip(event, 'fs17', 24)" onmouseover="showTip(event, 'fs17', 24)" class="f">memoizeConst</span> <span onmouseout="hideTip(event, 'fs18', 25)" onmouseover="showTip(event, 'fs18', 25)" class="f">f</span> <span class="o">=</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs19', 26)" onmouseover="showTip(event, 'fs19', 26)" class="f">g</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs14', 27)" onmouseover="showTip(event, 'fs14', 27)" class="f">memoize</span> (<span class="k">fun</span> _ <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs18', 28)" onmouseover="showTip(event, 'fs18', 28)" class="f">f</span>())
+    <span class="k">fun</span> () <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs19', 29)" onmouseover="showTip(event, 'fs19', 29)" class="f">g</span> <span class="n">0</span>
+</code></pre></td>
+</tr>
+</table>
+<div class="tip" id="fs1">val memoizeBy : f:(&#39;a -&gt; &#39;b) -&gt; g:(&#39;a -&gt; &#39;c) -&gt; (&#39;a -&gt; &#39;b) (requires equality)<br><br>Full name: Memoize.memoizeBy</div>
+<div class="tip" id="fs2">val f : (&#39;a -&gt; &#39;b)</div>
+<div class="tip" id="fs3">val g : (&#39;a -&gt; &#39;c) (requires equality)</div>
+<div class="tip" id="fs4">val cache : System.Collections.Concurrent.ConcurrentDictionary&lt;&#39;c option,Lazy&lt;&#39;b&gt;&gt; (requires equality)</div>
+<div class="tip" id="fs5">namespace System</div>
+<div class="tip" id="fs6">namespace System.Collections</div>
+<div class="tip" id="fs7">namespace System.Collections.Concurrent</div>
+<div class="tip" id="fs8">Multiple items<br>type ConcurrentDictionary&lt;&#39;TKey,&#39;TValue&gt; =<br>&#160;&#160;new : unit -&gt; ConcurrentDictionary&lt;&#39;TKey, &#39;TValue&gt; + 6 overloads<br>&#160;&#160;member AddOrUpdate : key:&#39;TKey * addValueFactory:Func&lt;&#39;TKey, &#39;TValue&gt; * updateValueFactory:Func&lt;&#39;TKey, &#39;TValue, &#39;TValue&gt; -&gt; &#39;TValue + 1 overload<br>&#160;&#160;member Clear : unit -&gt; unit<br>&#160;&#160;member ContainsKey : key:&#39;TKey -&gt; bool<br>&#160;&#160;member Count : int<br>&#160;&#160;member GetEnumerator : unit -&gt; IEnumerator&lt;KeyValuePair&lt;&#39;TKey, &#39;TValue&gt;&gt;<br>&#160;&#160;member GetOrAdd : key:&#39;TKey * valueFactory:Func&lt;&#39;TKey, &#39;TValue&gt; -&gt; &#39;TValue + 1 overload<br>&#160;&#160;member IsEmpty : bool<br>&#160;&#160;member Item : &#39;TKey -&gt; &#39;TValue with get, set<br>&#160;&#160;member Keys : ICollection&lt;&#39;TKey&gt;<br>&#160;&#160;...<br><br>Full name: System.Collections.Concurrent.ConcurrentDictionary&lt;_,_&gt;<br><br>--------------------<br>System.Collections.Concurrent.ConcurrentDictionary() : unit<br>System.Collections.Concurrent.ConcurrentDictionary(collection: System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;&#39;TKey,&#39;TValue&gt;&gt;) : unit<br>System.Collections.Concurrent.ConcurrentDictionary(comparer: System.Collections.Generic.IEqualityComparer&lt;&#39;TKey&gt;) : unit<br>System.Collections.Concurrent.ConcurrentDictionary(concurrencyLevel: int, capacity: int) : unit<br>System.Collections.Concurrent.ConcurrentDictionary(collection: System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;&#39;TKey,&#39;TValue&gt;&gt;, comparer: System.Collections.Generic.IEqualityComparer&lt;&#39;TKey&gt;) : unit<br>System.Collections.Concurrent.ConcurrentDictionary(concurrencyLevel: int, collection: System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;&#39;TKey,&#39;TValue&gt;&gt;, comparer: System.Collections.Generic.IEqualityComparer&lt;&#39;TKey&gt;) : unit<br>System.Collections.Concurrent.ConcurrentDictionary(concurrencyLevel: int, capacity: int, comparer: System.Collections.Generic.IEqualityComparer&lt;&#39;TKey&gt;) : unit</div>
+<div class="tip" id="fs9">module HashIdentity<br><br>from Microsoft.FSharp.Collections</div>
+<div class="tip" id="fs10">val Structural&lt;&#39;T (requires equality)&gt; : System.Collections.Generic.IEqualityComparer&lt;&#39;T&gt; (requires equality)<br><br>Full name: Microsoft.FSharp.Collections.HashIdentity.Structural</div>
+<div class="tip" id="fs11">val x : &#39;a</div>
+<div class="tip" id="fs12">System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd(key: &#39;c option, value: Lazy&lt;&#39;b&gt;) : Lazy&lt;&#39;b&gt;<br>System.Collections.Concurrent.ConcurrentDictionary.GetOrAdd(key: &#39;c option, valueFactory: System.Func&lt;&#39;c option,Lazy&lt;&#39;b&gt;&gt;) : Lazy&lt;&#39;b&gt;</div>
+<div class="tip" id="fs13">union case Option.Some: Value: &#39;T -&gt; Option&lt;&#39;T&gt;</div>
+<div class="tip" id="fs14">val memoize : f:(&#39;a -&gt; &#39;b) -&gt; (&#39;a -&gt; &#39;b) (requires equality)<br><br>Full name: Memoize.memoize</div>
+<div class="tip" id="fs15">val f : (&#39;a -&gt; &#39;b) (requires equality)</div>
+<div class="tip" id="fs16">val id : x:&#39;T -&gt; &#39;T<br><br>Full name: Microsoft.FSharp.Core.Operators.id</div>
+<div class="tip" id="fs17">val memoizeConst : f:(unit -&gt; &#39;a) -&gt; (unit -&gt; &#39;a)<br><br>Full name: Memoize.memoizeConst</div>
+<div class="tip" id="fs18">val f : (unit -&gt; &#39;a)</div>
+<div class="tip" id="fs19">val g : (int -&gt; &#39;a)</div>
+
+
+        </div>
+      </div>
+    </div>
+    <script>
+  <!-- your google analytics code here -->
+
+</script>
+  </body>
+</html>
