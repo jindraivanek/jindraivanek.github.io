@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  Compilation errors found: Unhandled exception "Object reference not set to an instance of an object." occured. StackTrace:    at Fue.ValueCompiler.comp@76-3.Invoke(Return v)
+   at Fue.Rop.op_GreaterGreaterEqualsGreater@76.Invoke(a x)
+   at Fue.Rop.catch[a](FSharpFunc`2 func),Unhandled exception "Object reference not set to an instance of an object." occured. StackTrace:    at Fue.ValueCompiler.comp@76-3.Invoke(Return v)
+   at Fue.Rop.op_GreaterGreaterEqualsGreater@76.Invoke(a x)
+   at Fue.Rop.catch[a](FSharpFunc`2 func),
+
+  <body>
+
+    Compilation errors found: Unhandled exception "The given key was not present in the dictionary." occured. StackTrace:    at Microsoft.FSharp.Collections.MapTreeModule.find[TValue,a](IComparer`1 comparer, TValue k, MapTree`2 m)
+   at Fue.ValueCompiler.deepSearch(FSharpMap`2 data, String name, FSharpList`1 props)
+   at Fue.ValueCompiler.search(FSharpMap`2 data, String key)
+   at Fue.ValueCompiler.comp@71(FSharpMap`2 data, TemplateValue v)
+   at Fue.Rop.catch[a](FSharpFunc`2 func),
+
+    <div class="content container">
+      <div class="posts">
+        
+      </div>
+    </div>
+    <script>
+  <!-- your google analytics code here -->
+
+</script>
+  </body>
+</html>
