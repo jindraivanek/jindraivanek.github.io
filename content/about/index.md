@@ -6,4 +6,15 @@ eleventyNavigation:
 ---
 # About Me
 
-I am a person that writes stuff.
+F# developer at Ciklum
+
+Prague, Czech Republic
+
+* [Projects](projects)
+* [Snippets](snippets)
+
+Github: @jindraivanek
+
+Gitlab: @jindraivanek
+
+Twitter: @jindraivanek
